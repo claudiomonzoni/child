@@ -353,6 +353,7 @@ button {
         &:hover {
           -ms-transform: rotate(20deg); /* IE 9 */
           transform: rotate(-20deg);
+          -webkit-transform: rotate(-20deg);
         }
       }
     }
@@ -437,6 +438,7 @@ button {
   }
   #baseBlanca {
     transform: translateY(2px);
+    -webkit-transform: translateY(2px);
   }
 }
 
@@ -597,6 +599,7 @@ button {
     @extend .anima;
     &:hover {
       transform: rotate(-25deg);
+      -webkit-transform: rotate(-25deg);
     }
   }
 }
@@ -658,6 +661,7 @@ button {
 
 #meet {
   margin-top: 8em;
+  
   @extend .gridGeneral;
   h1 {
     color: $rosa;
@@ -688,27 +692,32 @@ button {
     &:nth-child(3n + 1) {
       background-color: $naranja;
       transform: none;
+      -webkit-transform:none
     }
 
     &:nth-child(3n + 2) {
       background-color: $azul;
       transform: translateY(4em);
+      -webkit-transform:translateY(4em);
     }
 
     &:nth-child(3n + 3) {
       background-color: $rosa;
       transform: none;
+      -webkit-transform:none
     }
 
     @include tableta {
       &:nth-child(2n + 1) {
         background-color: $naranja;
         transform: none;
+        -webkit-transform:none
       }
 
       &:nth-child(2n + 2) {
         background-color: $azul;
         transform: translateY(4em);
+        -webkit-transform:translateY(4em);
       }
       &:nth-child(3n + 2) {
         background-color: $rosa;
@@ -719,11 +728,13 @@ button {
       &:nth-child(2n + 1) {
         background-color: $naranja;
         transform: none;
+        -webkit-transform:none
       }
 
       &:nth-child(2n + 2) {
         background-color: $azul;
         transform: none;
+        -webkit-transform:none
       }
       &:nth-child(3n + 2) {
         background-color: $rosa;
@@ -750,6 +761,49 @@ button {
     }
   }
 }
+
+
+#comite{
+  transform: translateY(8em);
+  -webkit-transform: translateY(8em);
+  margin:0;
+  @extend .gridGeneral;
+  background-color: $azul;
+  h1{
+    color:#fff;
+    grid-column: 1/-1;
+    padding: 1em 0;
+  }
+  img{
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  img:first-child{
+    margin-top: -1px;
+  }
+  .bandeja{
+    grid-column: 2/span 1;
+   display: flex;
+   flex-wrap: wrap;
+  }
+
+  .elcomite{
+    flex: 1 1 auto;
+    padding: 1em;
+    text-align: center;
+    img{
+      clip-path: circle(50% at 50% 50%);
+      max-width: 250px;
+      @include cel{
+        max-width: 100px;
+      }
+    }
+    h3{
+      color: #fff;
+    }
+  }
+}
+
 //video
 .video {
   position: relative;

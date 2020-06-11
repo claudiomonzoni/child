@@ -96,7 +96,7 @@ section {
   padding-left: 1em;
 }
 
-.gridGeneral, #who, #cultural, #musical, #relativo, #meet {
+.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10% 1fr 10%;
@@ -390,8 +390,8 @@ button {
 
 #inicio #izq ul li:hover {
   /* IE 9 */
+  transform: rotate(-20deg);
   -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
 }
 
 #who {
@@ -498,8 +498,8 @@ button {
 }
 
 #cultural #baseBlanca {
+  transform: translateY(2px);
   -webkit-transform: translateY(2px);
-          transform: translateY(2px);
 }
 
 #musical .bandeja {
@@ -741,8 +741,8 @@ button {
 }
 
 #relativo #adela:hover {
+  transform: rotate(-25deg);
   -webkit-transform: rotate(-25deg);
-          transform: rotate(-25deg);
 }
 
 #sliderMusical {
@@ -865,32 +865,32 @@ button {
 
 #meet .nino:nth-child(3n + 1) {
   background-color: #de9031;
+  transform: none;
   -webkit-transform: none;
-          transform: none;
 }
 
 #meet .nino:nth-child(3n + 2) {
   background-color: #2938a1;
+  transform: translateY(4em);
   -webkit-transform: translateY(4em);
-          transform: translateY(4em);
 }
 
 #meet .nino:nth-child(3n + 3) {
   background-color: #e35296;
+  transform: none;
   -webkit-transform: none;
-          transform: none;
 }
 
 @media (min-width: 767px) and (max-width: 1023px) {
   #meet .nino:nth-child(2n + 1) {
     background-color: #de9031;
+    transform: none;
     -webkit-transform: none;
-            transform: none;
   }
   #meet .nino:nth-child(2n + 2) {
     background-color: #2938a1;
+    transform: translateY(4em);
     -webkit-transform: translateY(4em);
-            transform: translateY(4em);
   }
   #meet .nino:nth-child(3n + 2) {
     background-color: #e35296;
@@ -900,13 +900,13 @@ button {
 @media (max-width: 479px) {
   #meet .nino:nth-child(2n + 1) {
     background-color: #de9031;
+    transform: none;
     -webkit-transform: none;
-            transform: none;
   }
   #meet .nino:nth-child(2n + 2) {
     background-color: #2938a1;
+    transform: none;
     -webkit-transform: none;
-            transform: none;
   }
   #meet .nino:nth-child(3n + 2) {
     background-color: #e35296;
@@ -934,6 +934,63 @@ button {
 #meet .nino .des {
   padding-top: 0.8em;
   border-top: 1px solid #fff;
+}
+
+#comite {
+  transform: translateY(8em);
+  -webkit-transform: translateY(8em);
+  margin: 0;
+  background-color: #2938a1;
+}
+
+#comite h1 {
+  color: #fff;
+  grid-column: 1/-1;
+  padding: 1em 0;
+}
+
+#comite img {
+  grid-column: 1/-1;
+  width: 100%;
+}
+
+#comite img:first-child {
+  margin-top: -1px;
+}
+
+#comite .bandeja {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/span 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#comite .elcomite {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 1em;
+  text-align: center;
+}
+
+#comite .elcomite img {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  max-width: 250px;
+}
+
+@media (max-width: 479px) {
+  #comite .elcomite img {
+    max-width: 100px;
+  }
+}
+
+#comite .elcomite h3 {
+  color: #fff;
 }
 
 .video {
