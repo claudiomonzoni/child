@@ -96,20 +96,20 @@ section {
   padding-left: 1em;
 }
 
-.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite {
+.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite, #forma {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10% 1fr 10%;
       grid-template-columns: 10% 1fr 10%;
 }
 
-.grid2col, #who .bandeja {
+.grid2col, #who .bandeja, #forma .bandeja {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 479px) {
-  .grid2col, #who .bandeja {
+  .grid2col, #who .bandeja, #forma .bandeja {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -863,6 +863,10 @@ button {
   border-radius: 3em;
 }
 
+#meet .nino:last-child {
+  margin-bottom: 5em;
+}
+
 #meet .nino:nth-child(3n + 1) {
   background-color: #de9031;
   transform: none;
@@ -937,8 +941,6 @@ button {
 }
 
 #comite {
-  transform: translateY(8em);
-  -webkit-transform: translateY(8em);
   margin: 0;
   background-color: #2938a1;
 }
@@ -961,7 +963,7 @@ button {
 #comite .bandeja {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 2/span 1;
+  grid-column: 2 / span 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -991,6 +993,100 @@ button {
 
 #comite .elcomite h3 {
   color: #fff;
+}
+
+#forma {
+  margin-top: 8em;
+}
+
+#forma h2 {
+  color: #de9031;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+#forma .bandeja {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  display: -ms-grid;
+  display: grid;
+}
+
+#forma .bandeja #canciones {
+  color: #2938a1;
+}
+
+#forma .bandeja #canciones ul {
+  margin-bottom: 3em;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #canciones ul li {
+    padding-bottom: 0.5em;
+  }
+}
+
+#forma .bandeja #canciones #album {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #canciones #album {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding: 2em;
+  }
+}
+
+#forma .bandeja #canciones #album img {
+  padding: 0.1em;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #canciones #album img {
+    padding: 0;
+  }
+}
+
+#forma .bandeja #canciones #album #stream {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.5em;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #canciones #album #stream {
+    padding: 0 0 0 1em;
+  }
+}
+
+#forma .bandeja #canciones #album #stream p {
+  grid-column: 1/-1;
+  color: #de9031;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#forma .bandeja #canciones #album #stream a {
+  padding: 0.5em;
+}
+
+#forma .bandeja #canciones #album #stream a:last-child {
+  grid-column: 1/-1;
 }
 
 .video {

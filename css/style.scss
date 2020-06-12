@@ -661,7 +661,7 @@ button {
 
 #meet {
   margin-top: 8em;
-  
+
   @extend .gridGeneral;
   h1 {
     color: $rosa;
@@ -688,36 +688,39 @@ button {
     padding: 2em;
     margin: 0.8em;
     border-radius: 3em;
+    &:last-child {
+      margin-bottom: 5em;
+    }
 
     &:nth-child(3n + 1) {
       background-color: $naranja;
       transform: none;
-      -webkit-transform:none
+      -webkit-transform: none;
     }
 
     &:nth-child(3n + 2) {
       background-color: $azul;
       transform: translateY(4em);
-      -webkit-transform:translateY(4em);
+      -webkit-transform: translateY(4em);
     }
 
     &:nth-child(3n + 3) {
       background-color: $rosa;
       transform: none;
-      -webkit-transform:none
+      -webkit-transform: none;
     }
 
     @include tableta {
       &:nth-child(2n + 1) {
         background-color: $naranja;
         transform: none;
-        -webkit-transform:none
+        -webkit-transform: none;
       }
 
       &:nth-child(2n + 2) {
         background-color: $azul;
         transform: translateY(4em);
-        -webkit-transform:translateY(4em);
+        -webkit-transform: translateY(4em);
       }
       &:nth-child(3n + 2) {
         background-color: $rosa;
@@ -728,13 +731,13 @@ button {
       &:nth-child(2n + 1) {
         background-color: $naranja;
         transform: none;
-        -webkit-transform:none
+        -webkit-transform: none;
       }
 
       &:nth-child(2n + 2) {
         background-color: $azul;
         transform: none;
-        -webkit-transform:none
+        -webkit-transform: none;
       }
       &:nth-child(3n + 2) {
         background-color: $rosa;
@@ -762,48 +765,106 @@ button {
   }
 }
 
-
-#comite{
-  transform: translateY(8em);
-  -webkit-transform: translateY(8em);
-  margin:0;
+#comite {
+  margin: 0;
   @extend .gridGeneral;
   background-color: $azul;
-  h1{
-    color:#fff;
+  h1 {
+    color: #fff;
     grid-column: 1/-1;
     padding: 1em 0;
   }
-  img{
+  img {
     grid-column: 1/-1;
     width: 100%;
   }
-  img:first-child{
+  img:first-child {
     margin-top: -1px;
   }
-  .bandeja{
-    grid-column: 2/span 1;
-   display: flex;
-   flex-wrap: wrap;
+  .bandeja {
+    grid-column: 2 / span 1;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .elcomite{
+  .elcomite {
     flex: 1 1 auto;
     padding: 1em;
     text-align: center;
-    img{
+    img {
       clip-path: circle(50% at 50% 50%);
       max-width: 250px;
-      @include cel{
+      @include cel {
         max-width: 100px;
       }
     }
-    h3{
+    h3 {
       color: #fff;
     }
   }
 }
 
+#forma {
+  @extend .gridGeneral;
+  margin-top: 8em;
+  h2 {
+    color: $naranja;
+    font-weight: bold;
+    margin-bottom: 2em;
+  }
+  .bandeja {
+    grid-column: 2 / span 1;
+    display: grid;
+    @extend .grid2col;
+    #canciones {
+      color: $azul;
+      ul {
+        margin-bottom: 3em;
+        @include cel{
+          li{
+            padding-bottom: 0.5em;
+          }
+        }
+      }
+      #album {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include cel{
+          grid-template-columns: 1fr;
+          padding: 2em;
+        }
+        img {
+          padding: 0.1em;
+          @include cel {
+            padding: 0;
+          }
+        }
+        #stream {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5em;
+          @include cel {
+            padding: 0 0 0 1em;
+          }
+          p {
+            grid-column: 1/-1;
+            color: $naranja;
+            font-weight: bold;
+            align-self: center;
+          }
+          a {
+            padding: 0.5em;
+          }
+          a:last-child {
+            grid-column: 1/-1;
+          }
+        }
+      }
+    }
+  }
+}
 //video
 .video {
   position: relative;
