@@ -96,20 +96,27 @@ section {
   padding-left: 1em;
 }
 
-.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite, #forma {
+.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite, #forma, #fruit, #board {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10% 1fr 10%;
       grid-template-columns: 10% 1fr 10%;
 }
 
-.grid2col, #who .bandeja, #forma .bandeja {
+.grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
 
+@media (min-width: 767px) and (max-width: 1023px) {
+  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 479px) {
-  .grid2col, #who .bandeja, #forma .bandeja {
+  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -1015,6 +1022,19 @@ button {
 
 #forma .bandeja #canciones {
   color: #2938a1;
+  padding: 0 3em;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #canciones {
+    padding: 0;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #forma .bandeja #canciones {
+    padding: 0 1em 0;
+  }
 }
 
 #forma .bandeja #canciones ul {
@@ -1035,6 +1055,14 @@ button {
 }
 
 @media (max-width: 479px) {
+  #forma .bandeja #canciones #album {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
   #forma .bandeja #canciones #album {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1072,6 +1100,12 @@ button {
   }
 }
 
+@media (min-width: 767px) and (max-width: 1023px) {
+  #forma .bandeja #canciones #album #stream {
+    padding: 0 0 0 1em;
+  }
+}
+
 #forma .bandeja #canciones #album #stream p {
   grid-column: 1/-1;
   color: #de9031;
@@ -1087,6 +1121,226 @@ button {
 
 #forma .bandeja #canciones #album #stream a:last-child {
   grid-column: 1/-1;
+}
+
+#forma .bandeja #formulario {
+  border-left: solid 3px #de9031;
+  padding: 0 3em;
+}
+
+@media (max-width: 479px) {
+  #forma .bandeja #formulario {
+    padding: 0;
+    border-left: none;
+  }
+}
+
+input,
+textarea {
+  background: #2938a1;
+  border: none;
+  padding: 0.5em;
+  color: #fff;
+  font-size: 1.1em;
+  margin: 0 0 1em;
+  border-radius: 0.7em;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background: #de9031;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+#fruit {
+  background: #de9031;
+  background: url("../img/pecasNaranjas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
+  background: url("../img/pecasNaranjas.svg") no-repeat, linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
+  background-size: 50%;
+  background-position: top right;
+  color: #fff;
+}
+
+#fruit img {
+  grid-column: 1 / -1;
+  margin-bottom: -2px;
+}
+
+#fruit h1 {
+  margin: 2em 0;
+  grid-column: 1/-1;
+}
+
+@media (max-width: 479px) {
+  #fruit h1 {
+    margin: 1em;
+  }
+}
+
+#fruit .bandeja {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  display: inherit;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #fruit .bandeja {
+    padding: 0 3em;
+  }
+}
+
+@media (max-width: 479px) {
+  #fruit .bandeja {
+    padding: 0 1em;
+    text-align: center;
+  }
+}
+
+#fruit .bandeja p {
+  padding-right: 3em;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #fruit .bandeja p {
+    padding-right: none;
+  }
+}
+
+@media (max-width: 479px) {
+  #fruit .bandeja p {
+    padding: 0em;
+  }
+}
+
+#fruit .bandeja img {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #fruit .bandeja img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+  }
+}
+
+@media (max-width: 479px) {
+  #fruit .bandeja img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+  }
+}
+
+#fruit .bandeja img:last-child {
+  grid-column: 1/-1;
+  -webkit-transform: translateY(-180px);
+          transform: translateY(-180px);
+  padding: 0 10%;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #fruit .bandeja img:last-child {
+    grid-column: 1/-1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    padding: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  #fruit .bandeja img:last-child {
+    grid-column: 1/-1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    padding: 0;
+  }
+}
+
+#board {
+  background: #de9031;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #2938a1), to(#051459));
+  background: linear-gradient(180deg, #2938a1 30%, #051459 100%);
+  background-size: 50%;
+  background-position: top right;
+  color: #fff;
+}
+
+#board img {
+  grid-column: 1 / -1;
+  margin-bottom: -2px;
+}
+
+#board h1 {
+  margin: 2em 0;
+  grid-column: 1/-1;
+}
+
+#board .bandeja {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  display: inherit;
+  padding-bottom: 5em;
+}
+
+#board .bandeja img {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  max-width: 150px;
+}
+
+#board .bandeja .director {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 479px) {
+  #board .bandeja .director {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+
+#board .bandeja .director .txt {
+  padding: 1em;
+  height: auto;
+}
+
+#board .bandeja .director .txt p {
+  margin-bottom: 0;
+}
+
+#board .bandeja .director h3 {
+  color: #fff;
+  font-weight: bold;
 }
 
 .video {

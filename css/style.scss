@@ -136,6 +136,9 @@ section {
 }
 .grid2col {
   grid-template-columns: 1fr 1fr;
+  @include tableta {
+    grid-template-columns: 1fr;
+  }
   @include cel {
     grid-template-columns: 1fr;
   }
@@ -359,6 +362,7 @@ button {
     }
   }
 }
+
 #who {
   @extend .gridGeneral;
   img {
@@ -818,10 +822,17 @@ button {
     @extend .grid2col;
     #canciones {
       color: $azul;
+      padding: 0 3em;
+      @include cel {
+        padding: 0;
+      }
+      @include tableta {
+        padding: 0 1em 0;
+      }
       ul {
         margin-bottom: 3em;
-        @include cel{
-          li{
+        @include cel {
+          li {
             padding-bottom: 0.5em;
           }
         }
@@ -829,7 +840,11 @@ button {
       #album {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        @include cel{
+        @include cel {
+          grid-template-columns: 1fr;
+          padding: 2em;
+        }
+        @include tableta() {
           grid-template-columns: 1fr;
           padding: 2em;
         }
@@ -848,6 +863,10 @@ button {
           @include cel {
             padding: 0 0 0 1em;
           }
+          @include tableta() {
+            padding: 0 0 0 1em;
+          }
+
           p {
             grid-column: 1/-1;
             color: $naranja;
@@ -863,7 +882,157 @@ button {
         }
       }
     }
+
+    #formulario {
+      border-left: solid 3px $naranja;
+      padding: 0 3em;
+      @include cel {
+        padding: 0;
+        border-left: none;
+      }
+    }
   }
+}
+
+//inputs
+input,
+textarea {
+  background: $azul;
+  border: none;
+  padding: 0.5em;
+  color: #fff;
+  font-size: 1.1em;
+  margin: 0 0 1em;
+  border-radius: 0.7em;
+  width: 100%;
+}
+input[type="submit"] {
+  background: $naranja;
+}
+::placeholder {
+  color: #fff;
+}
+
+#fruit {
+  @extend .gridGeneral;
+  img {
+    grid-column: 1 / -1;
+    margin-bottom: -2px;
+  }
+  h1 {
+    margin: 2em 0;
+    grid-column: 1/-1;
+    @include cel {
+      margin: 1em;
+    }
+  }
+  .bandeja {
+    grid-column: 2 / span 1;
+    display: inherit;
+    @extend .grid2col;
+
+    @include tableta {
+      padding: 0 3em;
+    }
+
+    @include cel {
+      padding: 0 1em;
+      text-align: center;
+    }
+
+    p {
+      padding-right: 3em;
+      @include tableta {
+        padding-right: none;
+      }
+      @include cel {
+        padding: 0em;
+      }
+    }
+    img {
+      grid-column: 2 / span 1;
+      @include tableta {
+        grid-column: 1 / span 1;
+      }
+      @include cel {
+        grid-column: 1 / span 1;
+      }
+    }
+    img:last-child {
+      grid-column: 1/-1;
+      transform: translateY(-180px);
+      padding: 0 10%;
+      @include tableta {
+        grid-column: 1/-1;
+        transform: translateY(0);
+        padding: 0;
+      }
+
+      @include cel {
+        grid-column: 1/-1;
+        transform: translateY(0);
+        padding: 0;
+      }
+    }
+  }
+
+  background: $naranja;
+  background: url("../img/pecasNaranjas.svg") no-repeat,
+    linear-gradient(180deg, $naranja 30%, $naranjaOscuro 100%);
+  background-size: 50%;
+  background-position: top right;
+  color: #fff;
+}
+
+#board {
+  @extend .gridGeneral;
+  img {
+    grid-column: 1 / -1;
+    margin-bottom: -2px;
+  }
+  h1 {
+    margin: 2em 0;
+    grid-column: 1/-1;
+  }
+  .bandeja {
+    grid-column: 2 / span 1;
+    display: inherit;
+    @extend .grid2col;
+    img{
+      clip-path: circle(50% at 50% 50%);
+      max-width: 150px;
+
+    }
+   .director{
+    
+     margin-top: 2em;
+     display:  flex;
+     color: #fff;
+     align-items: center;
+     @include cel{
+     flex-direction: column;
+     text-align: center;
+    }
+     .txt{
+       padding:1em;
+p{
+  margin-bottom: 0;
+}
+       height: auto;
+     }
+     h3{
+       color:#fff;
+       font-weight: bold;
+     }
+   }
+   padding-bottom: 5em;
+  }
+
+  background: $naranja;
+  background: linear-gradient(180deg, $azul 30%, $azulOscuro 100%);
+  background-size: 50%;
+  background-position: top right;
+  color: #fff;
 }
 //video
 .video {
