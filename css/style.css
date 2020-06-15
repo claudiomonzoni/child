@@ -403,8 +403,10 @@ button {
 
 #who {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#3a2cb8));
-  background: linear-gradient(180deg, #7b6cff 30%, #3a2cb8 100%);
+  background: url("../img/pecas_moradas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#3a2cb8));
+  background: url("../img/pecas_moradas.svg") no-repeat, linear-gradient(180deg, #7b6cff 30%, #3a2cb8 100%);
+  background-size: 50%;
+  background-position: top right;
   color: #fff;
 }
 
@@ -459,6 +461,13 @@ button {
   #who #b {
     margin-top: 0;
     display: block;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  #who {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#3a2cb8));
+    background: linear-gradient(180deg, #7b6cff 30%, #3a2cb8 100%);
   }
 }
 

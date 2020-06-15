@@ -401,12 +401,15 @@ button {
     }
   }
 
-  // background: rgb(123, 108, 255);
-  // background: url("../img/pecas_moradas.svg") no-repeat,
-  //   linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
-  // background-size: 50%;
-  // background-position: top right;
-  background: linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
+  //background: rgb(123, 108, 255);
+  background: url("../img/pecas_moradas.svg") no-repeat,
+    linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
+  background-size: 50%;
+  background-position: top right;
+
+  @supports (-webkit-touch-callout: none) {
+    background: linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
+  }
 
   color: #fff;
 }
