@@ -1461,6 +1461,7 @@ footer img {
   grid-column: 1/-1;
   -ms-grid-column-align: center;
       justify-self: center;
+  margin-bottom: -2px;
 }
 
 footer .logoPie {
@@ -1473,6 +1474,29 @@ footer .bandeja {
   display: inherit;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
   background: linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
+}
+
+footer .bandeja .bandejaul {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  border-top: solid 1px #fff;
+}
+
+footer .bandeja .bandejaul #payments {
+  padding: 2em 35%;
+}
+
+@media (max-width: 479px) {
+  footer .bandeja .bandejaul #payments {
+    padding: 2em 0%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  footer .bandeja .bandejaul #payments {
+    padding: 2em 15%;
+  }
 }
 
 footer .bandeja #newsletter,
@@ -1489,6 +1513,35 @@ footer .bandeja #newsletter {
   margin: 3em 0;
 }
 
+@media (max-width: 479px) {
+  footer .bandeja #newsletter {
+    padding: 0 1em;
+  }
+}
+
+footer .bandeja #newsletter #campoNews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .bandeja #newsletter #campoNews input[type="text"] {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  border-radius: 1em 0 0 1em;
+}
+
+footer .bandeja #newsletter #campoNews input[type="submit"] {
+  background: #2938a1;
+  color: #fff;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 0 1em 1em 0;
+}
+
 footer .bandeja #newsletter h3 {
   color: #fff;
   text-align: center;
@@ -1501,63 +1554,44 @@ footer .bandeja #newsletter input {
 }
 
 footer .bandeja ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  border-top: solid 1px #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   padding: 2em 0;
 }
 
-footer .bandeja ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 2em;
-          flex: 1 1 2em;
-  padding: 0 2em;
-  text-align: center;
-}
-
 @media (max-width: 479px) {
-  footer .bandeja ul li:nth-child(2n + 0) {
-    -webkit-column-break-after: always;
-            break-after: always;
-    margin-bottom: 0.5em;
-    padding: 0 1em;
+  footer .bandeja ul {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1600px) {
   footer .bandeja ul li {
-    max-width: 15%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 1em;
-            flex: 1 0 1em;
+    max-width: 85%;
   }
 }
 
-footer .bandeja ul li:first-child {
-  -webkit-box-flex: 2;
-      -ms-flex: 2 0 auto;
-          flex: 2 0 auto;
+footer .bandeja #payments li {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer .bandeja #payments li img {
   max-width: 50px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 footer .bandeja p {
   color: #fff;
   text-align: center;
+  font-size: 0.8em;
 }
 
 footer .bandeja h1 {
