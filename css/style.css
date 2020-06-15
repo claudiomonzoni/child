@@ -402,6 +402,7 @@ button {
 }
 
 #who {
+  min-height: 100vh;
   background: #7b6cff;
   background: url("../img/pecas_moradas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#1c3091));
   background: url("../img/pecas_moradas.svg") no-repeat, linear-gradient(180deg, #7b6cff 30%, #1c3091 100%);
@@ -615,9 +616,8 @@ button {
 #musical .d {
   grid-column: 1/-1;
   margin-top: 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -636,18 +636,8 @@ button {
   }
 }
 
-#musical .c img,
-#musical .d img {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-}
-
 #musical .c .lineaLatP,
 #musical .d .lineaLatP {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
   margin: 2.5em;
 }
 

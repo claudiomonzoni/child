@@ -365,6 +365,7 @@ button {
 
 #who {
   @extend .gridGeneral;
+  min-height: 100vh;
   img {
     grid-column: 1 / -1;
     margin-bottom: -2px;
@@ -522,18 +523,16 @@ button {
   .d {
     grid-column: 1/-1;
     margin-top: 5em;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 
     @include cel {
       flex-direction: column;
     }
-    img {
-      flex: 2;
-    }
+    // img {
+    // }
     .lineaLatP {
-      flex: 3;
       margin: 2.5em;
     }
   }
@@ -1179,25 +1178,25 @@ footer {
       flex-wrap: wrap;
       border-top: solid 1px #fff;
       padding: 2em 0;
- 
+
       li {
         flex: 1 1 2em;
-      @include cel{
-        &:nth-child(2n + 0){
-          break-after: always;
-          margin-bottom: 0.5em;
-          padding: 0 1em;
+        @include cel {
+          &:nth-child(2n + 0) {
+            break-after: always;
+            margin-bottom: 0.5em;
+            padding: 0 1em;
+          }
         }
-      }
-        @include hd{
-         max-width: 15%;
+        @include hd {
+          max-width: 15%;
           flex: 1 0 1em;
         }
         padding: 0 2em;
         text-align: center;
 
         &:first-child {
-         flex: 2 0 auto;
+          flex: 2 0 auto;
         }
       }
     }
