@@ -981,6 +981,10 @@ input[type="submit"] {
     linear-gradient(180deg, $naranja 30%, $naranjaOscuro 100%);
   background-size: 50%;
   background-position: top right;
+
+  @supports (-webkit-touch-callout: none) {
+    background: linear-gradient(180deg, $naranja 30%, $naranjaOscuro 100%);
+  }
   color: #fff;
 }
 

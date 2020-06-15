@@ -1270,6 +1270,13 @@ input[type="submit"] {
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  #fruit {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
+    background: linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
+  }
+}
+
 #board {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #2938a1), to(#051459));
   background: linear-gradient(180deg, #2938a1 30%, #051459 100%);
