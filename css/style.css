@@ -96,27 +96,27 @@ section {
   padding-left: 1em;
 }
 
-.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite, #forma, #fruit, #board {
+.gridGeneral, #who, #cultural, #musical, #relativo, #meet, #comite, #forma, #fruit, #board, #courses, footer, footer .bandeja {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10% 1fr 10%;
       grid-template-columns: 10% 1fr 10%;
 }
 
-.grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
+.grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja, #contact {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
 
 @media (min-width: 767px) and (max-width: 1023px) {
-  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
+  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja, #contact {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 479px) {
-  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja {
+  .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja, #contact {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -1341,6 +1341,243 @@ input[type="submit"] {
 #board .bandeja .director h3 {
   color: #fff;
   font-weight: bold;
+}
+
+#courses h1,
+#courses h2 {
+  color: #e35296;
+  grid-column: 1/-1;
+}
+
+@media (max-width: 479px) {
+  #courses h1 {
+    margin-top: 3em;
+  }
+}
+
+#courses h2 {
+  margin-bottom: 4em;
+}
+
+#courses #loscursos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+#courses #loscursos .curso {
+  position: relative;
+  border-radius: 2em;
+  padding: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #e35296;
+  margin: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+#courses #loscursos .curso h3 {
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#courses #loscursos .curso img {
+  position: absolute;
+  max-width: 70px;
+  top: -5em;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #courses #loscursos .curso:last-child {
+    margin-top: 5em;
+  }
+}
+
+@media (max-width: 479px) {
+  #courses #loscursos .curso {
+    margin-top: 5em;
+  }
+  #courses #loscursos .curso:first-child {
+    margin-top: 2em;
+  }
+}
+
+#courses p {
+  border-top: solid 1px #e35296;
+  text-align: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  padding: 2em;
+  margin-top: 2em;
+}
+
+#diplomatic h1 {
+  color: #e35296;
+  margin-top: 3em;
+}
+
+#contact {
+  display: -ms-grid;
+  display: grid;
+}
+
+#contact h1 {
+  color: #e35296;
+}
+
+#contact #portada {
+  border-radius: 0 10vw 10vw 0;
+  background: url(../img/contactoLat.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #contact #portada {
+    min-height: 40vh;
+    border-radius: 0em;
+    margin-bottom: 3em;
+  }
+}
+
+@media (max-width: 479px) {
+  #contact #portada {
+    min-height: 40vh;
+    border-radius: 0em;
+    margin-bottom: 3em;
+  }
+}
+
+#contact #contacto {
+  padding: 0 20%;
+}
+
+#contact #contacto p {
+  color: #7b6cff;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  border-bottom: solid 2px #de9031;
+}
+
+footer img {
+  grid-column: 1/-1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+footer .logoPie {
+  max-width: 150px;
+  margin-top: 5em;
+}
+
+footer .bandeja {
+  grid-column: 1/-1;
+  display: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
+  background: linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
+}
+
+footer .bandeja #newsletter,
+footer .bandeja ul,
+footer .bandeja h1,
+footer .bandeja p {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+}
+
+footer .bandeja #newsletter {
+  padding: 0 25%;
+  margin: 3em 0;
+}
+
+footer .bandeja #newsletter h3 {
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer .bandeja #newsletter input {
+  background: #fff;
+  color: #2938a1;
+}
+
+footer .bandeja ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: solid 1px #fff;
+  padding: 2em 0;
+}
+
+footer .bandeja ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 2em;
+          flex: 1 1 2em;
+  padding: 0 2em;
+  text-align: center;
+}
+
+@media (max-width: 479px) {
+  footer .bandeja ul li:nth-child(2n + 0) {
+    -webkit-column-break-after: always;
+            break-after: always;
+    margin-bottom: 0.5em;
+    padding: 0 1em;
+  }
+}
+
+@media (min-width: 1600px) {
+  footer .bandeja ul li {
+    max-width: 15%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 1em;
+            flex: 1 0 1em;
+  }
+}
+
+footer .bandeja ul li:first-child {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 0 auto;
+          flex: 2 0 auto;
+}
+
+footer .bandeja #payments li img {
+  max-width: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer .bandeja p {
+  color: #fff;
+  text-align: center;
+}
+
+footer .bandeja h1 {
+  color: #fff;
+  margin-bottom: 1em;
 }
 
 .video {
