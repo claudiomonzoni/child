@@ -402,10 +402,12 @@ button {
   }
 
   // background: rgb(123, 108, 255);
-  background: url("../img/pecas_moradas.svg") no-repeat,
-    linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
-  background-size: 50%;
-  background-position: top right;
+  // background: url("../img/pecas_moradas.svg") no-repeat,
+  //   linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
+  // background-size: 50%;
+  // background-position: top right;
+  background: linear-gradient(180deg, $morado 30%, #3a2cb8 100%);
+
   color: #fff;
 }
 
@@ -1149,15 +1151,15 @@ footer {
     .bandejaul {
       grid-column: 2 / span 1;
       border-top: solid 1px #fff;
-     #payments{
-      padding: 2em 35%;
-      @include cel{
-        padding: 2em 0%;
+      #payments {
+        padding: 2em 35%;
+        @include cel {
+          padding: 2em 0%;
+        }
+        @include tableta {
+          padding: 2em 15%;
+        }
       }
-      @include tableta{
-        padding: 2em 15%;
-      }
-     }
     }
     #newsletter,
     ul,
@@ -1171,13 +1173,13 @@ footer {
       @include cel {
         padding: 0 1em;
       }
-      #campoNews{
+      #campoNews {
         display: flex;
-        input[type="text"]{
+        input[type="text"] {
           flex: 3;
           border-radius: 1em 0 0 1em;
         }
-        input[type="submit"]{
+        input[type="submit"] {
           background: $azul;
           color: #fff;
           cursor: pointer;
@@ -1198,16 +1200,14 @@ footer {
     ul {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      @include cel{
+      @include cel {
         grid-template-columns: repeat(2, 1fr);
       }
       padding: 2em 0;
 
       li {
- 
         @include hd {
           max-width: 85%;
-     
         }
       }
     }
