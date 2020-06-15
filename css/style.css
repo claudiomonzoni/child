@@ -403,9 +403,8 @@ button {
 
 #who {
   min-height: 100vh;
-  background: #7b6cff;
-  background: url("../img/pecas_moradas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#1c3091));
-  background: url("../img/pecas_moradas.svg") no-repeat, linear-gradient(180deg, #7b6cff 30%, #1c3091 100%);
+  background: url("../img/pecas_moradas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #7b6cff), to(#3a2cb8));
+  background: url("../img/pecas_moradas.svg") no-repeat, linear-gradient(180deg, #7b6cff 30%, #3a2cb8 100%);
   background-size: 50%;
   background-position: top right;
   color: #fff;
@@ -1158,7 +1157,6 @@ input[type="submit"] {
 }
 
 #fruit {
-  background: #de9031;
   background: url("../img/pecasNaranjas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
   background: url("../img/pecasNaranjas.svg") no-repeat, linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
   background-size: 50%;
@@ -1266,11 +1264,8 @@ input[type="submit"] {
 }
 
 #board {
-  background: #de9031;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #2938a1), to(#051459));
   background: linear-gradient(180deg, #2938a1 30%, #051459 100%);
-  background-size: 50%;
-  background-position: top right;
   color: #fff;
 }
 

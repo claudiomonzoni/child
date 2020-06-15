@@ -401,12 +401,12 @@ button {
     }
   }
 
-  background: rgb(123, 108, 255);
+ // background: rgb(123, 108, 255);
   background: url("../img/pecas_moradas.svg") no-repeat,
     linear-gradient(
       180deg,
-      rgba(123, 108, 255, 1) 30%,
-      rgba(28, 48, 145, 1) 100%
+      $morado 30%,
+      #3a2cb8 100%
     );
   background-size: 50%;
   background-position: top right;
@@ -975,7 +975,7 @@ input[type="submit"] {
     }
   }
 
-  background: $naranja;
+ // background: $naranja;
   background: url("../img/pecasNaranjas.svg") no-repeat,
     linear-gradient(180deg, $naranja 30%, $naranjaOscuro 100%);
   background-size: 50%;
@@ -1025,10 +1025,8 @@ input[type="submit"] {
     padding-bottom: 5em;
   }
 
-  background: $naranja;
+  //background: $naranja;
   background: linear-gradient(180deg, $azul 30%, $azulOscuro 100%);
-  background-size: 50%;
-  background-position: top right;
   color: #fff;
 }
 #courses {
