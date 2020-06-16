@@ -44,6 +44,12 @@ h1 {
   text-align: center;
 }
 
+@media (max-width: 479px) {
+  h1 {
+    font-size: 1.7em;
+  }
+}
+
 h2 {
   font-size: 1.5em;
   text-align: center;
@@ -180,7 +186,7 @@ button {
   vertical-align: middle;
 }
 
-.anima, #menuFull a, #inicio .btn, #inicio #izq ul li, #relativo #adela {
+.anima, #menuFull .btn, #menuFull #izq ul li, #menuFull #derUl ul li a, #inicio .btn, #inicio #izq ul li, #relativo #adela {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
@@ -213,8 +219,8 @@ button {
     height: 100vh;
   }
   30% {
-    width: 0%;
-    height: 100vh;
+    width: 100%;
+    height: 0vh;
   }
 }
 
@@ -224,39 +230,49 @@ button {
     height: 100vh;
   }
   30% {
-    width: 0%;
-    height: 100vh;
+    width: 100%;
+    height: 0vh;
   }
 }
 
 #menuFull {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
   position: fixed;
   top: 0;
   right: 0;
-  width: 0%;
+  width: 100%;
   height: 0vh;
-  background-color: #2938a1;
   z-index: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   overflow: hidden;
+  background-color: #fff;
 }
 
-#menuFull ul {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 0;
-  margin: 0;
-  height: 65vh;
-  max-width: 80%;
+#menuFull .btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #e35296;
+  padding: 0.5em 1em;
+  text-align: center;
+  border-radius: 5em;
+  margin: 2em 1.5em;
+}
+
+#menuFull .btn:hover {
+  background: #2938a1;
+}
+
+@media (max-width: 479px) {
+  #menuFull .btn {
+    margin: 1em 0.5em;
+  }
+}
+
+#menuFull #izq {
+  padding: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,51 +280,128 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 @media (max-width: 479px) {
-  #menuFull ul {
-    height: 50%;
-    max-width: 100%;
+  #menuFull #izq {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    grid-column: 1/-1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #menuFull #izq #warner {
+    width: 70px;
+    display: none;
+  }
+  #menuFull #izq #logo {
+    max-width: 30%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
-#menuFull li {
-  margin: 0.5em 1em;
-  text-align: center;
-  display: inline-block;
+#menuFull #izq ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-#menuFull a {
-  position: relative;
-  font-size: 1.3em;
+@media (max-width: 479px) {
+  #menuFull #izq ul {
+    margin-top: 0.5em;
+  }
+}
+
+#menuFull #izq ul li {
+  padding: 0.4em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 70px;
+}
+
+@media (max-width: 479px) {
+  #menuFull #izq ul li {
+    max-width: 50px;
+  }
+}
+
+#menuFull #izq ul li:hover {
+  /* IE 9 */
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+}
+
+#menuFull #derUl {
+  background: #2938a1 url(../img/copeteMenu.svg) no-repeat;
+  background-position: -1px -5px;
+  background-size: auto 101%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 479px) {
+  #menuFull #derUl {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    grid-column: 1/-1;
+    background: #2938a1 url(../img/copeteMenuCel.svg) no-repeat;
+    background-position: left 100%;
+  }
+}
+
+#menuFull #derUl ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 479px) {
+  #menuFull #derUl ul {
+    padding: 2em 0.5em;
+  }
+}
+
+#menuFull #derUl ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-bottom: 0.5em;
+}
+
+#menuFull #derUl ul li a {
   color: #fff;
-}
-
-@media (max-width: 479px) {
-  #menuFull a {
-    font-size: 1.3em;
-  }
-}
-
-#menuFull a:hover,
-#menuFull .active {
+  text-decoration: none;
   font-weight: bold;
-  color: #2938a1;
+  font-size: 0.9em;
 }
 
-#menuFull a:hover::before,
-#menuFull .active::before {
-  content: "";
-  width: 0.5em;
-  height: 0.5em;
-  background-color: #2938a1;
-  position: absolute;
-  top: 0.45em;
-  left: -0.7em;
-  border-radius: 50vh;
+#menuFull #derUl ul li a:hover {
+  color: #e35296;
+  text-decoration: underline;
 }
 
 .menuFullAbierto {
@@ -514,6 +607,13 @@ button {
 #cultural #baseBlanca {
   transform: translateY(2px);
   -webkit-transform: translateY(2px);
+}
+
+#musical {
+  background: url(../img/iconosBG/guitarra.svg), url(../img/iconosBG/consola.svg), url(../img/iconosBG/tambores.svg), url(../img/iconosBG/teclado.svg), url(../img/iconosBG/notaA.svg), url(../img/iconosBG/notaB.svg), url(../img/iconosBG/notaC.svg), url(../img/iconosBG/trompeta.svg);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 5em, 5em, 6em, 5em, 5em, 5em, 6em, 8em;
+  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 70% 53%, 85% 68%, 15% 90%;
 }
 
 #musical .bandeja {
@@ -963,6 +1063,10 @@ button {
   margin-top: -1px;
 }
 
+#comite img:last-child {
+  margin-bottom: -2px;
+}
+
 #comite .bandeja {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -1122,6 +1226,7 @@ button {
 #forma .bandeja #formulario {
   border-left: solid 3px #de9031;
   padding: 0 3em;
+  position: relative;
 }
 
 @media (max-width: 479px) {
@@ -1129,6 +1234,26 @@ button {
     padding: 0;
     border-left: none;
   }
+}
+
+.condiciones, .condiciones1 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+  background: #2938a1;
+  color: #fff;
+  padding: 1em;
+  border: #de9031 solid 3px;
+  visibility: hidden;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input,
@@ -1342,6 +1467,13 @@ input[type="submit"] {
   font-weight: bold;
 }
 
+#courses {
+  background: url(../img/iconosBG/consola.svg), url(../img/iconosBG/teclado.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 5em, 5em;
+  background-position: 80% 0%, 10% 100%;
+}
+
 #courses h1,
 #courses h2 {
   color: #e35296;
@@ -1429,8 +1561,15 @@ input[type="submit"] {
 }
 
 #contact {
+  position: relative;
   display: -ms-grid;
   display: grid;
+}
+
+@media (max-width: 479px) {
+  #contact {
+    margin-top: 3em;
+  }
 }
 
 #contact h1 {
@@ -1529,7 +1668,8 @@ footer .bandeja #newsletter {
 
 @media (max-width: 479px) {
   footer .bandeja #newsletter {
-    padding: 0 1em;
+    padding: 0 0.5em;
+    font-size: 0.7em;
   }
 }
 
