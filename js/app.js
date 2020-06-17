@@ -2,6 +2,7 @@
 const menuIco = document.querySelector(".menu-toggle");
 const menuFull = document.querySelector("#menuFull");
 const menuUl = document.querySelector("#derUl");
+const donar = document.querySelector("#donar");
 const abierto = false;
 
 let abrirMenuFull = () => {
@@ -17,6 +18,7 @@ let abrirMenuFull = () => {
 
 menuIco.addEventListener("click", abrirMenuFull);
 menuUl.addEventListener("click", abrirMenuFull);
+donar.addEventListener("click", abrirMenuFull);
 
 //ramdom
 function randombg() {
@@ -30,7 +32,9 @@ randombg();
 //jquery
 
 $(document).ready(function () {
-
+  //video popup
+  $(".videoNino").videoPopup();
+// ventanas de condiciones en los formularios
   $("#condiciones1").click(function (e) {
     e.preventDefault();
     $(".condiciones1").css("visibility", "visible");
@@ -48,7 +52,7 @@ $(document).ready(function () {
     e.preventDefault();
     $(".condiciones").css("visibility", "hidden");
   });
-
+// los sliders
   $(".slider").owlCarousel({
     stagePadding: 50,
     loop: true,

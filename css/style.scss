@@ -282,6 +282,7 @@ button {
     }
     #logo {
       max-width: 30%;
+      height: auto;
       align-self: center;
     }
   }
@@ -801,6 +802,7 @@ button {
     }
 
     img {
+      -ms-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%);
       max-width: 300px;
     }
@@ -817,6 +819,12 @@ button {
     .des {
       padding-top: 0.8em;
       border-top: 1px solid #fff;
+      img{
+        margin-top: 0.5em;
+        max-width: 40px;
+        height: auto;
+        clip-path: none;
+      }
     }
   }
 }
@@ -851,6 +859,7 @@ button {
     padding: 1em;
     text-align: center;
     img {
+      -ms-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%);
       max-width: 250px;
       @include cel {
@@ -1068,6 +1077,7 @@ input[type="submit"] {
 
 #board {
   @extend .gridGeneral;
+  margin-bottom: 5em;
   img {
     grid-column: 1 / -1;
     margin-bottom: -2px;
@@ -1081,6 +1091,7 @@ input[type="submit"] {
     display: inherit;
     @extend .grid2col;
     img {
+      -ms-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%);
       max-width: 150px;
     }
