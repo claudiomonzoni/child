@@ -443,21 +443,7 @@ button {
   background: #2938a1;
 }
 
-#inicio #der {
-  grid-column: 2/-1;
-  min-width: 100%;
-}
-
-@media (max-width: 479px) {
-  #inicio #der {
-    grid-column: 1/-1;
-  }
-}
-
 #inicio #izq {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
   padding: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -466,6 +452,20 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 479px) {
+  #inicio #izq {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #inicio #izq #logo {
+    max-width: 60%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 #inicio #izq ul {
@@ -493,21 +493,6 @@ button {
   /* IE 9 */
   transform: rotate(-20deg);
   -webkit-transform: rotate(-20deg);
-}
-
-@media (max-width: 479px) {
-  #inicio #izq {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    grid-column: 1/-1;
-  }
-  #inicio #izq #logo {
-    max-width: 60%;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-  }
 }
 
 #who {
@@ -588,29 +573,6 @@ button {
 
 #cultural img {
   grid-column: 1 / -1;
-}
-
-#cultural #columnasE p {
-  -webkit-columns: 2;
-          columns: 2;
-}
-
-#cultural #columnasE p br {
-  margin-bottom: 1em;
-}
-
-@media (max-width: 479px) {
-  #cultural #columnasE p {
-    -webkit-columns: 1;
-            columns: 1;
-  }
-}
-
-@media (min-width: 1600px) {
-  #cultural #columnasE p {
-    -webkit-columns: 3;
-            columns: 3;
-  }
 }
 
 #cultural .bandeja {
@@ -1338,7 +1300,6 @@ input[type="submit"] {
 }
 
 #fruit {
-  margin-bottom: 7em;
   background: url("../img/pecasNaranjas.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(30%, #de9031), to(#e66b3d));
   background: url("../img/pecasNaranjas.svg") no-repeat, linear-gradient(180deg, #de9031 30%, #e66b3d 100%);
   background-size: 50%;
@@ -1610,10 +1571,6 @@ input[type="submit"] {
 #diplomatic h1 {
   color: #e35296;
   margin-top: 3em;
-}
-
-#diplomatic img {
-  margin-bottom: -15px;
 }
 
 #contact {

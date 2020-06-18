@@ -21,13 +21,13 @@ menuUl.addEventListener("click", abrirMenuFull);
 donar.addEventListener("click", abrirMenuFull);
 
 //ramdom
-// function randombg() {
-//   let random = Math.floor(Math.random() * 3) + 0;
-//   const portada = ["img/portada1.jpg", "img/portada2.jpg", "img/portada3.jpg"];
-//   document.getElementById("portada").src = portada[random];
-// }
+function randombg() {
+  let random = Math.floor(Math.random() * 3) + 0;
+  const portada = ["img/portada1.jpg", "img/portada2.jpg", "img/portada3.jpg"];
+  document.getElementById("portada").src = portada[random];
+}
 
-// randombg();
+randombg();
 
 //jquery
 
@@ -74,24 +74,6 @@ $(document).ready(function () {
       },
     },
   });
-
-
-  var sliderInicio = $("#sliderInicio");
-  sliderInicio.owlCarousel({
-    loop: true,
-    nav: false,
-    dots: false,
-    items: 1,
-    autoplay:true,
-    autoplayTimeout:6000,
-    autoplayHoverPause:true,
-    margin: 0,
-    mouseDrag: false,
-    touchDrag: false,
-    animateOut: "fadeOut",
-    animateIn: "fadeIn",
-  });
-
 
   var sliderMusical = $("#sliderMusical");
   sliderMusical.owlCarousel({
