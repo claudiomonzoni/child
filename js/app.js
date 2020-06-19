@@ -31,10 +31,25 @@ donar.addEventListener("click", abrirMenuFull);
 
 //jquery
 
+//lax
+
+window.onload = function () {
+  lax.setup(); // init
+
+  const updateLax = () => {
+    lax.update(window.scrollY);
+    window.requestAnimationFrame(updateLax);
+  };
+  console.log(lax);
+  window.requestAnimationFrame(updateLax);
+};
+
+//jquery
+
 $(document).ready(function () {
   //video popup
   $(".videoNino").videoPopup();
-// ventanas de condiciones en los formularios
+  // ventanas de condiciones en los formularios
   $("#condiciones1").click(function (e) {
     e.preventDefault();
     $(".condiciones1").css("visibility", "visible");
@@ -52,13 +67,14 @@ $(document).ready(function () {
     e.preventDefault();
     $(".condiciones").css("visibility", "hidden");
   });
-// los sliders
+  // los sliders
   $(".slider").owlCarousel({
     stagePadding: 50,
     loop: true,
     margin: 10,
     nav: false,
     video: true,
+    //lazyLoad: true,
     videoWidth: 800, // Default false; Type: Boolean/Number
     videoHeight: 600, // Default false; Type: Boolean/Number
     dots: true,
@@ -75,23 +91,21 @@ $(document).ready(function () {
     },
   });
 
-
   var sliderInicio = $("#sliderInicio");
   sliderInicio.owlCarousel({
     loop: true,
     nav: false,
     dots: false,
     items: 1,
-    autoplay:true,
-    autoplayTimeout:6000,
-    autoplayHoverPause:true,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    autoplayHoverPause: true,
     margin: 0,
     mouseDrag: false,
     touchDrag: false,
     animateOut: "fadeOut",
     animateIn: "fadeIn",
   });
-
 
   var sliderMusical = $("#sliderMusical");
   sliderMusical.owlCarousel({

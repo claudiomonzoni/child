@@ -265,95 +265,92 @@ button {
   .btn {
     @include boton(#fff, $rosa);
     margin: 2em 1.5em;
-    @include cel{
+    @include cel {
       margin: 1em 0.5em;
     }
   }
 
   background-color: #fff;
-#izq{
-  @include cel {
-    order: 2;
-    grid-column: 1/-1;
-    display: flex;
-    #warner{
-      width: 70px;
-      display: none;
-    }
-    #logo {
-      max-width: 30%;
-      height: auto;
-      align-self: center;
-    }
-  }
-  padding: 15%;
-  display: flex;
-  flex-direction: column;
-  ul {
-    display: flex;
-    margin-top: 2em;
-    align-items: center;
-    justify-content: space-evenly;
-    @include cel{
-      margin-top: 0.5em;
-    }
-    li {
-      padding: 0.4em;
-      flex: 1;
-      max-width: 70px;
-      @include cel{
-        max-width: 50px;
-
+  #izq {
+    @include cel {
+      order: 2;
+      grid-column: 1/-1;
+      display: flex;
+      #warner {
+        width: 70px;
+        display: none;
       }
-      @extend .anima;
-      &:hover {
-        -ms-transform: rotate(20deg); /* IE 9 */
-        transform: rotate(-20deg);
-        -webkit-transform: rotate(-20deg);
+      #logo {
+        max-width: 30%;
+        height: auto;
+        align-self: center;
       }
     }
-  }
-}
-#derUl{
-  @include cel{
-    order:1;
-    grid-column: 1/-1;
-    background: $azul url(../img/copeteMenuCel.svg) no-repeat;
-    background-position: left 100%;
-  }
-  background: $azul url(../img/copeteMenu.svg) no-repeat;
-  background-position: -1px -5px;
-  background-size: auto 101%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ul{
+    padding: 15%;
     display: flex;
     flex-direction: column;
-    @include cel{
-      padding: 2em 0.5em;
-    }
-    li{
-      flex:1;
-      margin-bottom: 0.5em;
-      a{
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.9em;
+    ul {
+      display: flex;
+      margin-top: 2em;
+      align-items: center;
+      justify-content: space-evenly;
+      @include cel {
+        margin-top: 0.5em;
+      }
+      li {
+        padding: 0.4em;
+        flex: 1;
+        max-width: 70px;
+        @include cel {
+          max-width: 50px;
+        }
         @extend .anima;
-        &:hover{
-          color: $rosa;
-          text-decoration: underline;
+        &:hover {
+          -ms-transform: rotate(20deg); /* IE 9 */
+          transform: rotate(-20deg);
+          -webkit-transform: rotate(-20deg);
+        }
+      }
+    }
+  }
+  #derUl {
+    @include cel {
+      order: 1;
+      grid-column: 1/-1;
+      background: $azul url(../img/copeteMenuCel.svg) no-repeat;
+      background-position: left 100%;
+    }
+    background: $azul url(../img/copeteMenu.svg) no-repeat;
+    background-position: -1px -5px;
+    background-size: auto 101%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+      @include cel {
+        padding: 2em 0.5em;
+      }
+      li {
+        flex: 1;
+        margin-bottom: 0.5em;
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 0.9em;
+          @extend .anima;
+          &:hover {
+            color: $rosa;
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 }
-}
 .menuFullAbierto {
-  // display: block !important;
-  //visibility: visible !important;
   animation: menuAbierto 1.2s ease forwards;
 }
 
@@ -373,10 +370,10 @@ button {
     @include boton(#fff, $rosa);
     margin: 2em 1.5em;
   }
-  #der{
+  #der {
     grid-column: 2/-1;
     min-width: 100%;
-    @include cel{
+    @include cel {
       grid-column: 1/-1;
     }
     // #sliderInicio{
@@ -474,16 +471,29 @@ button {
   img {
     grid-column: 1 / -1;
   }
-  #columnasE p{
-    columns: 2;
-    br{
-      margin-bottom: 1em;
+  #columnasE {
+    display: grid;
+    @extend .minmax;
+    justify-content: center;
+    align-items: center;
+    img {
+      grid-column: 1 / span 2;
+      padding: 1em;
+      @include cel {
+        grid-column: 1/-1;
+      }
+      @include tableta() {
+        grid-column: 1/span 1;
+      }
     }
-    @include cel{
-      columns: 1;
-    }
-    @include hd{
-      columns: 3;
+    p {
+      grid-column: 3/ -1;
+      @include cel {
+        grid-column: 1/-1;
+      }
+      @include tableta() {
+        grid-column: 3/-1;
+      }
     }
   }
   .bandeja {
@@ -515,18 +525,16 @@ button {
 
 #musical {
   @extend .gridGeneral;
-  background: 
-  url(../img/iconosBG/guitarra.svg),
-    url(../img/iconosBG/consola.svg), 
-    url(../img/iconosBG/tambores.svg),
-    url(../img/iconosBG/teclado.svg),
-    url(../img/iconosBG/notaA.svg),
-    url(../img/iconosBG/notaB.svg), 
-    url(../img/iconosBG/notaC.svg),
+  background: url(../img/iconosBG/guitarra.svg),
+    url(../img/iconosBG/consola.svg), url(../img/iconosBG/tambores.svg),
+    url(../img/iconosBG/teclado.svg), url(../img/iconosBG/notaA.svg),
+    url(../img/iconosBG/notaB.svg), url(../img/iconosBG/notaC.svg),
     url(../img/iconosBG/trompeta.svg);
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat;
   background-size: 5em, 5em, 6em, 5em, 5em, 5em, 6em, 8em;
-  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 70% 53%, 85% 68%, 15% 90%;
+  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 70% 53%,
+    85% 68%, 15% 90%;
 
   .bandeja {
     grid-column: 2 / span 1;
@@ -843,7 +851,7 @@ button {
     .des {
       padding-top: 0.8em;
       border-top: 1px solid #fff;
-      img{
+      img {
         margin-top: 0.5em;
         max-width: 40px;
         height: auto;
@@ -979,20 +987,19 @@ button {
         border-left: none;
       }
       position: relative;
-     
     }
   }
 }
 
-
-.condiciones, .condiciones1{
-  position:absolute;
+.condiciones,
+.condiciones1 {
+  position: absolute;
   top: 70%;
   left: 0%;
   width: 100%;
   height: 250px;
   overflow-y: scroll;
-  background:$azul;
+  background: $azul;
   color: #fff;
   padding: 1em;
   border: $naranja solid 3px;
@@ -1004,7 +1011,7 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  }
+}
 
 input,
 textarea {
@@ -1102,7 +1109,6 @@ input[type="submit"] {
 
 #board {
   @extend .gridGeneral;
-  margin-bottom: 5em;
   img {
     grid-column: 1 / -1;
     margin-bottom: -2px;
@@ -1151,13 +1157,10 @@ input[type="submit"] {
 #courses {
   @extend .gridGeneral;
 
-  background: 
-    url(../img/iconosBG/consola.svg), 
-    url(../img/iconosBG/teclado.svg);
+  background: url(../img/iconosBG/consola.svg), url(../img/iconosBG/teclado.svg);
   background-repeat: no-repeat, no-repeat;
   background-size: 5em, 5em;
   background-position: 80% 0%, 10% 100%;
-
 
   h1,
   h2 {
@@ -1228,7 +1231,7 @@ input[type="submit"] {
     color: $rosa;
     margin-top: 3em;
   }
-  img{
+  img {
     margin-bottom: -15px;
   }
 }
@@ -1390,3 +1393,7 @@ footer {
   width: 100%;
   height: 100%;
 }
+
+// .owl-carousel .owl-item .owl-lazy.loaded{
+//   opacity: 1;
+//   }
