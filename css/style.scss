@@ -376,8 +376,11 @@ button {
     @include cel {
       grid-column: 1/-1;
     }
-    // #sliderInicio{
-    // }
+    #sliderInicio {
+      img {
+        margin-left: -1px;
+      }
+    }
   }
   #izq {
     grid-column: 1 / span 1;
@@ -483,7 +486,8 @@ button {
         grid-column: 1/-1;
       }
       @include tableta() {
-        grid-column: 1/span 1;
+        padding: 1em 5em;
+        grid-column: 1/ -1;
       }
     }
     p {
@@ -492,7 +496,7 @@ button {
         grid-column: 1/-1;
       }
       @include tableta() {
-        grid-column: 3/-1;
+        grid-column: 1/-1;
       }
     }
   }
@@ -598,7 +602,7 @@ button {
       height: 150px;
       background: url("../img/baseVideo.svg") no-repeat 100% 102%;
       z-index: 900;
-      bottom: 0;
+      bottom: -2px;
     }
   }
   span {
