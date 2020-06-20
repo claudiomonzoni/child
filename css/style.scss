@@ -37,7 +37,7 @@ $hd: 1600px;
 }
 
 @mixin tableta {
-  @media (min-width: #{$tableta - 1px}) and (max-width: #{$tableta-land - 1px}) {
+  @media  (max-width: #{$tableta-land - 1px}) {
     @content;
   }
 }
@@ -682,6 +682,7 @@ button {
     z-index: 500;
     margin-top: -40px;
     @include cel {
+      display: none;
       width: 50px;
       height: 50px;
       top: auto;

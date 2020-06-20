@@ -114,7 +114,7 @@ section {
       grid-template-columns: 1fr 1fr;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .grid2col, #who .bandeja, #forma .bandeja, #fruit .bandeja, #board .bandeja, #contact {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -618,7 +618,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #cultural #columnasE img {
     padding: 1em 5em;
     grid-column: 1/ -1;
@@ -635,7 +635,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #cultural #columnasE p {
     grid-column: 1/-1;
   }
@@ -744,7 +744,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #musical .bandeja .b {
     grid-column: 1/-1;
   }
@@ -871,7 +871,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #musical .finMusical .lineaLatP {
     grid-column: 1/-1;
   }
@@ -902,6 +902,7 @@ button {
 
 @media (max-width: 479px) {
   #relativo #adela {
+    display: none;
     width: 50px;
     height: 50px;
     top: auto;
@@ -1010,7 +1011,7 @@ button {
       grid-template-columns: repeat(3, 1fr);
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #meet .bandeja {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -1055,7 +1056,7 @@ button {
   -webkit-transform: none;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #meet .nino:nth-child(2n + 1) {
     background-color: #de9031;
     transform: none;
@@ -1208,7 +1209,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #forma .bandeja #canciones {
     padding: 0 1em 0;
   }
@@ -1239,7 +1240,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #forma .bandeja #canciones #album {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1277,7 +1278,7 @@ button {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #forma .bandeja #canciones #album #stream {
     padding: 0 0 0 1em;
   }
@@ -1398,7 +1399,7 @@ input[type="submit"] {
   display: inherit;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #fruit .bandeja {
     padding: 0 3em;
   }
@@ -1415,7 +1416,7 @@ input[type="submit"] {
   padding-right: 3em;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #fruit .bandeja p {
     padding-right: none;
   }
@@ -1433,7 +1434,7 @@ input[type="submit"] {
   grid-column: 2 / span 1;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #fruit .bandeja img {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -1456,7 +1457,7 @@ input[type="submit"] {
   padding: 0 10%;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #fruit .bandeja img:last-child {
     grid-column: 1/-1;
     -webkit-transform: translateY(0);
@@ -1580,7 +1581,7 @@ input[type="submit"] {
       grid-template-columns: 1fr 1fr 1fr;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #courses #loscursos {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1620,13 +1621,13 @@ input[type="submit"] {
   -webkit-transform: translateX(-50%);
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #courses #loscursos .curso:last-child {
     margin-top: 5em;
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #courses #loscursos .curso {
     margin-top: 5em;
   }
@@ -1686,7 +1687,7 @@ input[type="submit"] {
   background-position: center center;
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   #contact #portada {
     min-height: 40vh;
     border-radius: 0em;
@@ -1749,7 +1750,7 @@ footer .bandeja .bandejaul #payments {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   footer .bandeja .bandejaul #payments {
     padding: 2em 15%;
   }
