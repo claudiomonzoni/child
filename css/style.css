@@ -1457,6 +1457,13 @@ input[type="submit"] {
   padding: 0 10%;
 }
 
+@media (min-width: 1024px) and (max-width: 1599px) {
+  #fruit .bandeja img:last-child {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 @media (max-width: 1023px) {
   #fruit .bandeja img:last-child {
     grid-column: 1/-1;

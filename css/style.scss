@@ -1086,6 +1086,10 @@ input[type="submit"] {
       grid-column: 1/-1;
       transform: translateY(-180px);
       padding: 0 10%;
+
+      @include tableta_land {
+        transform: translateY(0);
+      }
       @include tableta {
         grid-column: 1/-1;
         transform: translateY(0);
