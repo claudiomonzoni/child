@@ -1461,7 +1461,7 @@ input[type="submit"] {
     grid-column: 1/-1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
-    padding: 0;
+    padding: 1em  0;
   }
 }
 
@@ -1571,23 +1571,33 @@ input[type="submit"] {
 }
 
 #courses #loscursos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / span 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #courses #loscursos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 479px) {
+  #courses #loscursos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 #courses #loscursos .curso {
   position: relative;
   border-radius: 2em;
   padding: 1em;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   background-color: #e35296;
   margin: 1em;
   color: #fff;
@@ -1613,6 +1623,15 @@ input[type="submit"] {
 @media (min-width: 767px) and (max-width: 1023px) {
   #courses #loscursos .curso:last-child {
     margin-top: 5em;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #courses #loscursos .curso {
+    margin-top: 5em;
+  }
+  #courses #loscursos .curso:first-child {
+    margin-top: 2em;
   }
 }
 

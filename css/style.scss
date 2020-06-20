@@ -1088,7 +1088,7 @@ input[type="submit"] {
       @include tableta {
         grid-column: 1/-1;
         transform: translateY(0);
-        padding: 0;
+        padding:1em  0;
       }
 
       @include cel {
@@ -1181,9 +1181,15 @@ input[type="submit"] {
     margin-bottom: 4em;
   }
   #loscursos {
-    display: flex;
-    flex-wrap: wrap;
     grid-column: 2 / span 1;
+    display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+@include tableta{
+  grid-template-columns: 1fr;
+}
+@include cel{
+  grid-template-columns: 1fr;
+}
 
     .curso {
       h3 {
@@ -1203,7 +1209,6 @@ input[type="submit"] {
       }
       border-radius: 2em;
       padding: 1em;
-      flex: 1;
       background-color: $rosa;
       margin: 1em;
       color: #fff;
@@ -1213,6 +1218,13 @@ input[type="submit"] {
           margin-top: 5em;
         }
       }
+      @include tableta() {
+        &:first-child {
+          margin-top: 2em;
+        }
+        margin-top: 5em;
+      }
+
       @include cel {
         &:first-child {
           margin-top: 2em;
