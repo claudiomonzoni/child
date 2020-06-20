@@ -1185,6 +1185,11 @@ input[type="submit"] {
     grid-column: 2 / span 1;
     display: grid;
 grid-template-columns: 1fr 1fr 1fr;
+
+@include tableta_land{
+  grid-template-columns: 1fr;
+}
+
 @include tableta{
   grid-template-columns: 1fr;
 }
@@ -1214,12 +1219,21 @@ grid-template-columns: 1fr 1fr 1fr;
       margin: 1em;
       color: #fff;
       text-align: center;
+
+      @include tableta_land {
+        &:last-child {
+          margin-top: 5em;
+        }
+        &:first-child {
+          margin-top: 2em;
+        }
+        margin-top: 5em;
+      }
+
       @include tableta {
         &:last-child {
           margin-top: 5em;
         }
-      }
-      @include tableta() {
         &:first-child {
           margin-top: 2em;
         }

@@ -1581,6 +1581,13 @@ input[type="submit"] {
       grid-template-columns: 1fr 1fr 1fr;
 }
 
+@media (min-width: 1024px) and (max-width: 1599px) {
+  #courses #loscursos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1023px) {
   #courses #loscursos {
     -ms-grid-columns: 1fr;
@@ -1621,14 +1628,23 @@ input[type="submit"] {
   -webkit-transform: translateX(-50%);
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) and (max-width: 1599px) {
+  #courses #loscursos .curso {
+    margin-top: 5em;
+  }
   #courses #loscursos .curso:last-child {
     margin-top: 5em;
+  }
+  #courses #loscursos .curso:first-child {
+    margin-top: 2em;
   }
 }
 
 @media (max-width: 1023px) {
   #courses #loscursos .curso {
+    margin-top: 5em;
+  }
+  #courses #loscursos .curso:last-child {
     margin-top: 5em;
   }
   #courses #loscursos .curso:first-child {
