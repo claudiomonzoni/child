@@ -37,7 +37,7 @@ $hd: 1600px;
 }
 
 @mixin tableta {
-  @media  (max-width: #{$tableta-land - 1px}) {
+  @media (max-width: #{$tableta-land - 1px}) {
     @content;
   }
 }
@@ -116,6 +116,7 @@ body {
   position: relative;
   color: #111111;
   line-height: 1.5em;
+  overflow-x: hidden;
 }
 a {
   color: $rosa;
@@ -334,12 +335,18 @@ button {
       }
       li {
         flex: 1;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.8em;
+        @include cel{
+          margin-bottom: 0.5em;
+        }
         a {
           color: #fff;
           text-decoration: none;
           font-weight: bold;
-          font-size: 0.9em;
+          font-size: calc(112.5% + 0.5vw);
+          @include cel{
+            font-size: 1em;
+          }
           @extend .anima;
           &:hover {
             color: $rosa;
@@ -848,6 +855,10 @@ button {
       font-size: 1.5em;
       font-weight: bold;
       padding: 0.8em 0;
+      .flag{
+        width: 30px;
+        height: auto;
+      }
     }
     .nombre {
       font-size: 1.1em;
@@ -940,7 +951,7 @@ button {
       }
       #album {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         @include cel {
           grid-template-columns: 1fr;
           padding: 2em;
@@ -957,28 +968,22 @@ button {
         }
         #stream {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          align-items: center;
-          justify-content: center;
-          padding: 1.5em;
-          @include cel {
-            padding: 0 0 0 1em;
-          }
-          @include tableta() {
-            padding: 0 0 0 1em;
-          }
-
-          p {
+         grid-template-columns: repeat(2, 1fr);
+          p, h3 {
             grid-column: 1/-1;
             color: $naranja;
             font-weight: bold;
             align-self: center;
+            padding: 0.5em 0;
           }
           a {
-            padding: 0.5em;
-          }
-          a:last-child {
-            grid-column: 1/-1;
+            padding: 0.3em;
+            flex: 1 3 auto;
+            @include hd{
+              display: block;
+              max-width: 200px;
+              padding: 0.8em;
+            }
           }
         }
       }
@@ -1053,19 +1058,24 @@ input[type="submit"] {
   .bandeja {
     grid-column: 2 / span 1;
     display: inherit;
-    @extend .grid2col;
+    grid-template-columns: repeat(4, 1fr);
 
     @include tableta {
       padding: 0 3em;
+      grid-template-columns: repeat(1, 1fr);
     }
 
     @include cel {
       padding: 0 1em;
       text-align: center;
+      grid-template-columns: repeat(1, 1fr);
     }
-
+#txt{
+  grid-column: 1 / span 2;
+  align-self: center;
+}
     p {
-      padding-right: 3em;
+      padding: 0 1em;
       @include tableta {
         padding-right: none;
       }
@@ -1074,7 +1084,9 @@ input[type="submit"] {
       }
     }
     img {
-      grid-column: 2 / span 1;
+      padding: 0 2em;
+      
+      grid-column: 3 / span 2;
       @include tableta {
         grid-column: 1 / span 1;
       }
@@ -1084,8 +1096,8 @@ input[type="submit"] {
     }
     img:last-child {
       grid-column: 1/-1;
-      transform: translateY(-180px);
-      padding: 0 10%;
+      transform: translateY(-150px);
+      padding: 0 15% 2em;
 
       @include tableta_land {
         transform: translateY(0);
@@ -1093,7 +1105,7 @@ input[type="submit"] {
       @include tableta {
         grid-column: 1/-1;
         transform: translateY(0);
-        padding:1em  0;
+        padding: 1em 0;
       }
 
       @include cel {
@@ -1188,18 +1200,14 @@ input[type="submit"] {
   #loscursos {
     grid-column: 2 / span 1;
     display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
-@include tableta_land{
-  grid-template-columns: 1fr;
-}
-
-@include tableta{
-  grid-template-columns: 1fr;
-}
-@include cel{
-  grid-template-columns: 1fr;
-}
+    @include tableta {
+      grid-template-columns: 1fr;
+    }
+    @include cel {
+      grid-template-columns: 1fr;
+    }
 
     .curso {
       h3 {
@@ -1225,13 +1233,9 @@ grid-template-columns: 1fr 1fr 1fr;
       text-align: center;
 
       @include tableta_land {
-        &:last-child {
-          margin-top: 5em;
+        h3 {
+          font-size: 1.2em;
         }
-        &:first-child {
-          margin-top: 2em;
-        }
-        margin-top: 5em;
       }
 
       @include tableta {
@@ -1432,3 +1436,62 @@ footer {
 // .owl-carousel .owl-item .owl-lazy.loaded{
 //   opacity: 1;
 //   }
+
+#msj,
+#msjVideo {
+  color: $naranja;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#msjVideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em;
+    margin-bottom: 0;
+  }
+}
+
+// cargador
+.lds-ring {
+  //display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: none;
+}
+.mostrarSpin {
+  display: inline-block;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $naranja transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

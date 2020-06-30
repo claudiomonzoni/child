@@ -40,7 +40,6 @@ window.onload = function () {
     lax.update(window.scrollY);
     window.requestAnimationFrame(updateLax);
   };
-  console.log(lax);
   window.requestAnimationFrame(updateLax);
 };
 
@@ -121,4 +120,92 @@ $(document).ready(function () {
     e.preventDefault();
     sliderMusical.trigger("next.owl.carousel");
   });
+
+  // contacto
+  $("#contactoBtn").click(function (e) {
+    var name = $("#nameC").val();
+    var lastname = $("#lastnameC").val();
+    var email = $("#emailC").val();
+    var city = $("#cityC").val();
+    var country = $("#countryC").val();
+    var phone = $("#phoneC").val();
+    var message = $("#messageC").val();
+
+    $("#msj").empty(); // To empty previous error/success message.
+    // Checking for blank fields.
+    if (name == "" || lastname == "" || email == "") {
+      alert("Please fill the fields of Name, Lastname or Email");
+    } else {
+      // Returns successful data submission message when the entered information is stored in database.
+
+      $.post(
+        "contact.php",
+        {
+          name,
+          lastname,
+          email,
+          city,
+          country,
+          phone,
+          message,
+        },
+        function (data) {
+          $("#msj").append(data); // Append returned message to message paragraph.
+
+          if (
+            data ==
+            "Thanks for contacting us, we will respond as soon as possible"
+          ) {
+            $("#formaContacto")[0].reset(); // To reset form fields on success.
+          }
+        }
+      );
+    }
+
+    e.preventDefault();
+  });
+});
+
+//subir video
+
+const formaVideo = document.getElementById("formuVideo");
+const mensajeUI = document.querySelector("#msjVideo > p");
+const submit = document.getElementById("submit");
+const spin = document.querySelector(".lds-ring");
+
+formaVideo.addEventListener("submit", (e) => {
+  e.preventDefault();
+  submit.disable = true;
+  // mostramos carga
+  spin.classList.add("mostrarSpin")
+  mensajeUI.innerHTML = "Uploading file and data";
+  const datos = new FormData(formaVideo);
+  console.log("click");
+  // //con fetch
+  fetch("video.php", {
+    method: "POST",
+    body: datos,
+  })
+    .then((res) => res.json())
+    //los datos son echo de php
+    .then((data) => {
+      console.log(data);
+      mensajeUI.innerHTML = `Message: ${data}`;
+      formaVideo.reset();
+      submit.disable = false;
+      spin.classList.remove("mostrarSpin")
+    })
+    .catch((error) => {
+      console.log(`el error es: ${error.message}`);
+    });
+  // // fin fetch
+
+  // var xhr = new XMLHttpRequest();
+  // xhr.open("POST", "../video.php");
+  // xhr.send(datos);
+  // if (xhr.status == 200) {
+  //   console.log("exito");
+  // } else {
+  //   console.log("error");
+  // }
 });
