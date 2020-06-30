@@ -164,6 +164,86 @@ $(document).ready(function () {
 
     e.preventDefault();
   });
+
+  //secuecia
+
+  // $("#mundo").sequencer(
+  //   {
+  //     count: 128,
+  //     path: "../img/sec",
+  //     ext: "jpg",
+  //   },
+  //   function () {
+  //     $("div#preload").hide();
+  //   }
+  // );
+
+  // scroll magic
+  var images = [
+    // "../img/sec/example_imagesequence_01.png",
+    // "../img/sec/example_imagesequence_02.png",
+    // "../img/sec/example_imagesequence_03.png",
+    // "../img/sec/example_imagesequence_04.png",
+    // "../img/sec/example_imagesequence_05.png",
+    // "../img/sec/example_imagesequence_06.png",
+    // "../img/sec/example_imagesequence_07.png",
+    "../img/sec/0.jpg",
+    "../img/sec/1.jpg",
+    "../img/sec/2.jpg",
+    "../img/sec/3.jpg",
+    "../img/sec/4.jpg",
+    "../img/sec/5.jpg",
+    "../img/sec/6.jpg",
+    "../img/sec/7.jpg",
+    "../img/sec/8.jpg",
+    "../img/sec/9.jpg",
+    "../img/sec/10.jpg",
+    "../img/sec/11.jpg",
+    "../img/sec/12.jpg",
+    "../img/sec/13.jpg",
+    "../img/sec/14.jpg",
+    "../img/sec/15.jpg",
+    "../img/sec/16.jpg",
+    "../img/sec/17.jpg",
+    "../img/sec/18.jpg",
+    "../img/sec/19.jpg",
+    "../img/sec/20.jpg",
+    "../img/sec/21.jpg",
+    "../img/sec/22.jpg",
+    "../img/sec/23.jpg",
+    "../img/sec/24.jpg",
+    "../img/sec/25.jpg",
+    "../img/sec/26.jpg",
+  ];
+
+  // TweenMax can tween any property of any object. We use this object to cycle through the array
+  var obj = { curImg: 0 };
+
+  // create tween
+  var tween = TweenMax.to(obj, 0.5, {
+    curImg: images.length - 1, // animate propery curImg to number of images
+    roundProps: "curImg", // only integers so it can be used as an array index
+    repeat: 3, // repeat 3 times
+    immediateRender: true, // load first image automatically
+    ease: Linear.easeNone, // show every image the same ammount of time
+    onUpdate: function () {
+      $("#myimg").attr("src", images[obj.curImg]); // set the image source
+    },
+  });
+
+  // init controller
+  var controller = new ScrollMagic.Controller();
+
+  // build scene
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger",
+    triggerHook: "onEnter",
+    //offset: 1000,
+    duration: 3500,
+  })
+    .setTween(tween)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
 });
 
 //subir video
@@ -177,7 +257,7 @@ formaVideo.addEventListener("submit", (e) => {
   e.preventDefault();
   submit.disable = true;
   // mostramos carga
-  spin.classList.add("mostrarSpin")
+  spin.classList.add("mostrarSpin");
   mensajeUI.innerHTML = "Uploading file and data";
   const datos = new FormData(formaVideo);
   console.log("click");
@@ -193,19 +273,9 @@ formaVideo.addEventListener("submit", (e) => {
       mensajeUI.innerHTML = `Message: ${data}`;
       formaVideo.reset();
       submit.disable = false;
-      spin.classList.remove("mostrarSpin")
+      spin.classList.remove("mostrarSpin");
     })
     .catch((error) => {
       console.log(`el error es: ${error.message}`);
     });
-  // // fin fetch
-
-  // var xhr = new XMLHttpRequest();
-  // xhr.open("POST", "../video.php");
-  // xhr.send(datos);
-  // if (xhr.status == 200) {
-  //   console.log("exito");
-  // } else {
-  //   console.log("error");
-  // }
 });

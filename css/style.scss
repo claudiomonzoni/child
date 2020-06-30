@@ -336,7 +336,7 @@ button {
       li {
         flex: 1;
         margin-bottom: 0.8em;
-        @include cel{
+        @include cel {
           margin-bottom: 0.5em;
         }
         a {
@@ -344,7 +344,7 @@ button {
           text-decoration: none;
           font-weight: bold;
           font-size: calc(112.5% + 0.5vw);
-          @include cel{
+          @include cel {
             font-size: 1em;
           }
           @extend .anima;
@@ -491,6 +491,7 @@ button {
       padding: 1em;
       @include cel {
         grid-column: 1/-1;
+        padding: 0 !important;
       }
       @include tableta() {
         padding: 1em 5em;
@@ -855,7 +856,7 @@ button {
       font-size: 1.5em;
       font-weight: bold;
       padding: 0.8em 0;
-      .flag{
+      .flag {
         width: 30px;
         height: auto;
       }
@@ -968,8 +969,9 @@ button {
         }
         #stream {
           display: grid;
-         grid-template-columns: repeat(2, 1fr);
-          p, h3 {
+          grid-template-columns: repeat(2, 1fr);
+          p,
+          h3 {
             grid-column: 1/-1;
             color: $naranja;
             font-weight: bold;
@@ -979,7 +981,7 @@ button {
           a {
             padding: 0.3em;
             flex: 1 3 auto;
-            @include hd{
+            @include hd {
               display: block;
               max-width: 200px;
               padding: 0.8em;
@@ -1044,6 +1046,7 @@ input[type="submit"] {
 #fruit {
   @extend .gridGeneral;
   margin-bottom: 7em;
+
   img {
     grid-column: 1 / -1;
     margin-bottom: -2px;
@@ -1070,10 +1073,10 @@ input[type="submit"] {
       text-align: center;
       grid-template-columns: repeat(1, 1fr);
     }
-#txt{
-  grid-column: 1 / span 2;
-  align-self: center;
-}
+    #txt {
+      grid-column: 1 / span 2;
+      align-self: center;
+    }
     p {
       padding: 0 1em;
       @include tableta {
@@ -1085,7 +1088,6 @@ input[type="submit"] {
     }
     img {
       padding: 0 2em;
-      
       grid-column: 3 / span 2;
       @include tableta {
         grid-column: 1 / span 1;
@@ -1494,4 +1496,32 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+#demo {
+  grid-column: 1/-1;
+}
+#mundo {
+  grid-column: 1/-1;
+  margin-top: 5em;
+  //position: relative;
+  height: 5000px;
+  z-index: 0;
+  img {
+    min-height: 100%;
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  // img {
+  //   // width: 100%;
+  //   // height: auto;
+  //   min-height: 100%;
+  //   width: auto;
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
 }

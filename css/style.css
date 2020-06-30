@@ -628,6 +628,7 @@ button {
 @media (max-width: 479px) {
   #cultural #columnasE img {
     grid-column: 1/-1;
+    padding: 0 !important;
   }
 }
 
@@ -1283,7 +1284,8 @@ button {
       grid-template-columns: repeat(2, 1fr);
 }
 
-#forma .bandeja #canciones #album #stream p, #forma .bandeja #canciones #album #stream h3 {
+#forma .bandeja #canciones #album #stream p,
+#forma .bandeja #canciones #album #stream h3 {
   grid-column: 1/-1;
   color: #de9031;
   font-weight: bold;
@@ -1995,5 +1997,26 @@ footer .bandeja h1 {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+#demo {
+  grid-column: 1/-1;
+}
+
+#mundo {
+  grid-column: 1/-1;
+  margin-top: 5em;
+  height: 5000px;
+  z-index: 0;
+}
+
+#mundo img {
+  min-height: 100%;
+  width: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */
