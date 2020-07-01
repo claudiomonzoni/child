@@ -234,6 +234,19 @@ $(document).ready(function () {
   // init controller
   var controller = new ScrollMagic.Controller();
 
+  $(function () {
+    // wait for document ready
+    // build scene
+    var scene = new ScrollMagic.Scene({
+      triggerElement: "#trigger",
+      triggerHook: "onLeave",
+      duration: 1500,
+    })
+      .setPin("#imagesequence")
+      //.addIndicators({ name: "1 (duration: 1500)" }) // add indicators (requires plugin)
+      .addTo(controller);
+  });
+
   // build scene
   var scene = new ScrollMagic.Scene({
     triggerElement: "#trigger",
@@ -241,6 +254,7 @@ $(document).ready(function () {
     //offset: 1000,
     duration: 3500,
   })
+    // .setPin("#imagesequence")
     .setTween(tween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);

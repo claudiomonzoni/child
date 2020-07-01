@@ -545,7 +545,7 @@ button {
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     no-repeat, no-repeat, no-repeat;
   background-size: 5em, 5em, 6em, 5em, 5em, 5em, 6em, 8em;
-  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 70% 53%,
+  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 45% 60%,
     85% 68%, 15% 90%;
 
   .bandeja {
@@ -1499,7 +1499,11 @@ footer {
 }
 #demo {
   grid-column: 1/-1;
+  //height: 00vh;
 }
+
+
+
 #mundo {
   grid-column: 1/-1;
   margin-top: 5em;

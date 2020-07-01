@@ -694,7 +694,7 @@ button {
   background: url(../img/iconosBG/guitarra.svg), url(../img/iconosBG/consola.svg), url(../img/iconosBG/tambores.svg), url(../img/iconosBG/teclado.svg), url(../img/iconosBG/notaA.svg), url(../img/iconosBG/notaB.svg), url(../img/iconosBG/notaC.svg), url(../img/iconosBG/trompeta.svg);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 5em, 5em, 6em, 5em, 5em, 5em, 6em, 8em;
-  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 70% 53%, 85% 68%, 15% 90%;
+  background-position: 80% 2%, 82% 11%, 10% 15%, 80% 18%, 80% 42%, 45% 60%, 85% 68%, 15% 90%;
 }
 
 #musical .bandeja {
