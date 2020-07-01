@@ -34,7 +34,9 @@ donar.addEventListener("click", abrirMenuFull);
 //lax
 
 window.onload = function () {
-  lax.setup(); // init
+  lax.setup({
+    breakpoints: { small: 0, large: 992 },
+  }); // init
 
   const updateLax = () => {
     lax.update(window.scrollY);
@@ -165,56 +167,36 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
-  //secuecia
-
-  // $("#mundo").sequencer(
-  //   {
-  //     count: 128,
-  //     path: "../img/sec",
-  //     ext: "jpg",
-  //   },
-  //   function () {
-  //     $("div#preload").hide();
-  //   }
-  // );
-
   // scroll magic
-  var images = [
-    // "../img/sec/example_imagesequence_01.png",
-    // "../img/sec/example_imagesequence_02.png",
-    // "../img/sec/example_imagesequence_03.png",
-    // "../img/sec/example_imagesequence_04.png",
-    // "../img/sec/example_imagesequence_05.png",
-    // "../img/sec/example_imagesequence_06.png",
-    // "../img/sec/example_imagesequence_07.png",
-    "./img/sec/0.jpg",
-    "./img/sec/1.jpg",
-    "./img/sec/2.jpg",
-    "./img/sec/3.jpg",
-    "./img/sec/4.jpg",
-    "./img/sec/5.jpg",
-    "./img/sec/6.jpg",
-    "./img/sec/7.jpg",
-    "./img/sec/8.jpg",
-    "./img/sec/9.jpg",
-    "./img/sec/10.jpg",
-    "./img/sec/11.jpg",
-    "./img/sec/12.jpg",
-    "./img/sec/13.jpg",
-    "./img/sec/14.jpg",
-    "./img/sec/15.jpg",
-    "./img/sec/16.jpg",
-    "./img/sec/17.jpg",
-    "./img/sec/18.jpg",
-    "./img/sec/19.jpg",
-    "./img/sec/20.jpg",
-    "./img/sec/21.jpg",
-    "./img/sec/22.jpg",
-    "./img/sec/23.jpg",
-    "./img/sec/24.jpg",
-    "./img/sec/25.jpg",
-    "./img/sec/26.jpg",
-  ];
+
+  var images = new Array();
+  var filename = [];
+
+  var cnt1 = 1;
+  for (var i = 0; i <= 199; i++) {
+    ++cnt1;
+    filename.push("./img/sec/ezgif-frame-" + cnt1 + ".jpg");
+  }
+  //precarga
+  var cnt = 0;
+  for (var i = 0; i < filename.length; i++) {
+    var img = new Image();
+    img.onload = function () {
+      ++cnt;
+      if (cnt >= filename.length) {
+        // all images loaded here
+        // console.log("All " + cnt + " images Loaded");
+        // init();
+        //console.log(images);
+      } else {
+        // console.log("Images Loaded: " + cnt);
+        console.log(filename);
+      }
+    };
+    img.src = filename[i];
+  
+    images.push(img.attributes.src.value);
+  }
 
   // TweenMax can tween any property of any object. We use this object to cycle through the array
   var obj = { curImg: 0 };

@@ -2000,6 +2000,7 @@ footer .bandeja h1 {
 }
 
 #demo {
+  margin-top: 5em;
   grid-column: 1/-1;
 }
 
