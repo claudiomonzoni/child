@@ -1255,7 +1255,7 @@ button {
   #forma .bandeja #canciones #album {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    padding: 2em;
+    padding: 0em;
   }
 }
 
@@ -1263,7 +1263,7 @@ button {
   #forma .bandeja #canciones #album {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    padding: 2em;
+    padding: 0em;
   }
 }
 
@@ -1718,8 +1718,9 @@ input[type="submit"] {
 #contact #portada {
   border-radius: 0 10vw 10vw 0;
   background: url(../img/contactoLat.jpg) no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: 50%;
+  background-position: left center;
+  background-attachment: fixed;
 }
 
 @media (max-width: 1023px) {
@@ -1727,6 +1728,7 @@ input[type="submit"] {
     min-height: 40vh;
     border-radius: 0em;
     margin-bottom: 3em;
+    background-size: cover;
   }
 }
 
@@ -1735,6 +1737,8 @@ input[type="submit"] {
     min-height: 40vh;
     border-radius: 0em;
     margin-bottom: 3em;
+    background-position: center center;
+    background-attachment: scroll;
   }
 }
 

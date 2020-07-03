@@ -955,11 +955,11 @@ button {
         grid-template-columns: 1fr;
         @include cel {
           grid-template-columns: 1fr;
-          padding: 2em;
+          padding: 0em;
         }
         @include tableta() {
           grid-template-columns: 1fr;
-          padding: 2em;
+          padding: 0em;
         }
         img {
           padding: 0.1em;
@@ -1290,17 +1290,21 @@ input[type="submit"] {
   #portada {
     border-radius: 0 10vw 10vw 0;
     background: url(../img/contactoLat.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-size: 50%;
+    background-position: left center;
+    background-attachment: fixed;
     @include tableta {
       min-height: 40vh;
       border-radius: 0em;
       margin-bottom: 3em;
+      background-size: cover;
     }
     @include cel {
       min-height: 40vh;
       border-radius: 0em;
       margin-bottom: 3em;
+      background-position: center center;
+    background-attachment: scroll;
     }
   }
   #contacto {
@@ -1498,11 +1502,9 @@ footer {
   }
 }
 #demo {
-  margin-top:5em;
+  margin-top: 5em;
   grid-column: 1/-1;
 }
-
-
 
 #mundo {
   grid-column: 1/-1;

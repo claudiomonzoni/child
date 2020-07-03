@@ -172,7 +172,7 @@ $(document).ready(function () {
   var images = new Array();
   var filename = [];
 
-  var cnt1 = 1;
+  var cnt1 = 0;
   for (var i = 0; i <= 199; i++) {
     ++cnt1;
     filename.push("./img/sec/ezgif-frame-" + cnt1 + ".jpg");
@@ -184,17 +184,14 @@ $(document).ready(function () {
     img.onload = function () {
       ++cnt;
       if (cnt >= filename.length) {
-        // all images loaded here
-        // console.log("All " + cnt + " images Loaded");
-        // init();
-        //console.log(images);
+        
       } else {
         // console.log("Images Loaded: " + cnt);
         console.log(filename);
       }
     };
     img.src = filename[i];
-  
+
     images.push(img.attributes.src.value);
   }
 
@@ -256,7 +253,7 @@ formaVideo.addEventListener("submit", (e) => {
   spin.classList.add("mostrarSpin");
   mensajeUI.innerHTML = "Uploading file and data";
   const datos = new FormData(formaVideo);
-  console.log("click");
+  // console.log("click");
   // //con fetch
   fetch("video.php", {
     method: "POST",
@@ -265,13 +262,13 @@ formaVideo.addEventListener("submit", (e) => {
     .then((res) => res.json())
     //los datos son echo de php
     .then((data) => {
-      console.log(data);
+      //console.log(data);
       mensajeUI.innerHTML = `Message: ${data}`;
       formaVideo.reset();
       submit.disable = false;
       spin.classList.remove("mostrarSpin");
     })
     .catch((error) => {
-      console.log(`el error es: ${error.message}`);
+      // console.log(`el error es: ${error.message}`);
     });
 });
