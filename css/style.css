@@ -521,6 +521,7 @@ button {
   }
   #inicio #izq #logo {
     max-width: 60%;
+    height: auto;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1718,9 +1719,8 @@ input[type="submit"] {
 #contact #portada {
   border-radius: 0 10vw 10vw 0;
   background: url(../img/contactoLat.jpg) no-repeat;
-  background-size: 50%;
-  background-position: left center;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
 }
 
 @media (max-width: 1023px) {

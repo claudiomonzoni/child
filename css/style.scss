@@ -417,6 +417,7 @@ button {
       grid-column: 1/-1;
       #logo {
         max-width: 60%;
+        height: auto;
         align-self: center;
       }
     }
@@ -1290,9 +1291,9 @@ input[type="submit"] {
   #portada {
     border-radius: 0 10vw 10vw 0;
     background: url(../img/contactoLat.jpg) no-repeat;
-    background-size: 50%;
-    background-position: left center;
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    //background-attachment: fixed;
     @include tableta {
       min-height: 40vh;
       border-radius: 0em;
@@ -1304,7 +1305,7 @@ input[type="submit"] {
       border-radius: 0em;
       margin-bottom: 3em;
       background-position: center center;
-    background-attachment: scroll;
+      background-attachment: scroll;
     }
   }
   #contacto {
